@@ -52,16 +52,10 @@ To evaluate on ProteinGym benchmark, you need to first download datasets from th
 wget https://marks.hms.harvard.edu/proteingym/DMS_ProteinGym_substitutions.zip -O data/proteingym/DMS_ProteinGym_substitutions.zip
 unzip data/proteingym/DMS_ProteinGym_substitutions.zip -d data/proteingym/DMS_ProteinGym_substitutions
 
-# Download PDB files and Foldseek alignments
+# Download PDB files and pre-computed evolutionary profiles 
 tar -xzf data/proteingym/pdbs.tar.gz -C data/proteingym
 tar -xzf data/proteingym/struc_seq_aln_foldseek.tar.gz -C  data/proteingym
-
-#Generate structural profiles (p(AA|structure)) using ProteinMPNN
-bash  third_party/ProteinMPNN/submit_example_7.sh -i data/proteingym/pdbs  -o data/proteingym/ifprobs
-
-#Format and align profiles for EvoIF input
-python third_party/process_pssm.py --pdb_dir data/proteingym/pdbs --npz_dir data/proteingym/ifprobs/unconditional_probs_only --output_dir data/proteingym/processed_ifprobs
-
+tar -xzf data/proteingym/gym_ifprobs.tar.gz -C data/proteingym
 
 ```
 
@@ -80,7 +74,7 @@ We provide EvoIF  checkpoints for evaluation. You can download these checkpoints
 ```bash
 
 # Run evaluation for EvoIf
-python script/evaluate.py -c $(pwd)/config/evaluate.yaml   --datadir  $(pwd)/data/proteingym/DMS_ProteinGym_substitutions --structdir $(pwd)/data/proteingym/pdbs   --struc_align_dir $(pwd)/data/proteingym/struc_seq_aln_foldseek --if_profile_dir $(pwd)/data/proteingym/processed_ifprobs --profile_types "['struc_profile','if_profile']"  --ckpt $(pwd)/ckpt/evoif.pth
+python script/evaluate.py -c $(pwd)/config/evaluate.yaml   --datadir  $(pwd)/data/proteingym/DMS_ProteinGym_substitutions --structdir $(pwd)/data/proteingym/pdbs   --struc_align_dir $(pwd)/data/proteingym/struc_seq_aln_foldseek --if_profile_dir $(pwd)/data/proteingym/gym_ifprobs --profile_types "['struc_profile','if_profile']"  --ckpt $(pwd)/ckpt/evoif.pth
 ```
 
 

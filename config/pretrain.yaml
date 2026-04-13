@@ -23,7 +23,7 @@ task:
     class: FusionNetwork
     sequence_model:
       class: MyESM
-      path: /mnt/nas/datasets_tmp/bio/evoif/evoif_release/esm_weight # Your path to download esm model weights
+      path: esm-model-weights  # Your path to download esm model weights
       model: ESM-2-650M
 
     structure_model:

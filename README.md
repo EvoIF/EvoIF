@@ -69,7 +69,7 @@ There is a `task.model.sequence_model.path` argument in each config file to cont
 
 ### Evaluation
 
-We provide EvoIF  checkpoints for evaluation. You can download these checkpoints from [link](https://file.kiwi/0c6ab7cf#wIHNIf_PBkUBJMErhqemmA) and then run the following commands for evaluation. Right now, we only support single-gpu evaluation, which takes around 1h 12m  for all 217 assays on one H800 GPU. The output files can be found at `./scratch/proteingym_output`, which is specified by the `output_dir` argument in the `*.yaml`.
+We provide EvoIF  checkpoints for evaluation. You can download these checkpoints from [link](https://file.kiwi/0c6ab7cf#wIHNIf_PBkUBJMErhqemmA) or [link](https://drive.google.com/file/d/1SStAU_6u6msmewyUvppjkuW0-Okbv85d/view?usp=sharing) ,and then run the following commands for evaluation. Right now, we only support single-gpu evaluation, which takes around 1h 12m  for all 217 assays on one H800 GPU. The output files can be found at `./scratch/proteingym_output`, which is specified by the `output_dir` argument in the `*.yaml`.
 
 ```bash
 

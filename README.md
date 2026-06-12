@@ -18,7 +18,7 @@ By fusing sequence-structure representations with these profiles via a compact f
 
 ![EvoIF Model](./asset/EvoIF.png)
 
-This codebase is based on PyTorch and [TorchDrug](https://github.com/DeepGraphLearning/torchdrug) ([TorchProtein](https://torchprotein.ai)).Code is archived on Zenodo at `https://doi.org/10.5281/zenodo.20139484`
+This codebase is based on PyTorch and [TorchDrug](https://github.com/DeepGraphLearning/torchdrug) ([TorchProtein](https://torchprotein.ai)). Code is archived on [Zenodo](https://doi.org/10.5281/zenodo.20139484).
 
 ## 🏆 ProteinGym Benchmark Results
 
